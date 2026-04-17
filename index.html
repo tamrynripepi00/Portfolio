@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamryn Ripepi's Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="hero" id="home">
+            <nav class="topbar">
+                <a class="brand" href="#home">TR</a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+
+            <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+            <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+            <div class="hero-grid" aria-hidden="true"></div>
+
+            <div class="hero-content reveal">
+                <h1>
+                    Tamryn
+                    <span>Ripepi</span>
+                </h1>
+                <p class="hero-role">Entry Level Software Developer</p>
+                <p class="hero-copy">
+                    Building thoughtful digital experiences with clean code, strong design sense,
+                    and practical full stack problem solving.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="pictures/My CV.pdf" download>Download CV</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="section section-light" id="about">
+                <div class="content-grid two-column">
+                    <div class="profile-section reveal">
+                        <img src="pictures/TamrynR.jpg" alt="Tamryn Ripepi" class="profile-pic">
+                    </div>
+
+                    <div class="about-right reveal">
+                        <div class="section-copy">
+                            <h3>About Me</h3>
+                            <p>Hi, I'm Tamryn Ripepi. I'm a motivated Full Stack Web Developer who graduated from Life Choices Academy in Cape Town. I enjoy building websites and learning new technologies that help me improve my development skills. I have experience working with HTML, CSS, JavaScript, and SQL, and I'm always looking for opportunities to grow and gain more experience in the tech industry</p>                       
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section section-soft" id="skills">
+                <div class="section-heading reveal">                  
+                    <h2>Programming Skills</h2>
+                </div>
+                <div class="skills-block reveal">
+                    <div class="skills-layout">
+                        <div class="skill-card">
+                            <span class="skill-mark html-mark">H</span>
+                            <h4>HTML</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark css-mark">C</span>
+                            <h4>CSS</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark js-mark">J</span>
+                            <h4>JavaScript</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark node-mark">V</span>
+                            <h4>Vue.js</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark sql-mark">S</span>
+                            <h4>SQL</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark api-mark">N</span>
+                            <h4>Node.js</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark api-mark">P</span>
+                            <h4>PHP</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark api-mark">O</span>
+                            <h4>Oracle APEX</h4>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark api-mark">P</span>
+                            <h4>Python</h4>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="skills-block reveal">
+                    <h2 class="skills-subtitle">Tools</h2>
+                    <div class="skills-layout tools-layout">
+                        <div class="skill-card">
+                            <span class="skill-mark git-mark">G</span>
+                            <h4>GitHub</h4>
+                            <p>Version control and project collaboration.</p>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark vscode-mark">V</span>
+                            <h4>VS Code</h4>
+                            <p>Efficient editing and workflow setup.</p>
+                        </div>
+                        <div class="skill-card">
+                            <span class="skill-mark design-mark">F</span>
+                            <h4>Figma</h4>
+                            <p>Design planning and interface thinking.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="section section-light" id="projects">
+                <div class="section-heading reveal">
+                    <p class="section-label">Featured Projects</p>
+                    <h2>Selected work</h2>
+                </div>
+
+                <div class="filter-bar reveal" data-filter-group="projects">
+                    <button class="filter-button is-active" type="button" data-filter="all">All</button>
+                    <button class="filter-button" type="button" data-filter="web">Web Apps</button>
+                    <button class="filter-button" type="button" data-filter="frontend">Frontend</button>
+                    <button class="filter-button" type="button" data-filter="fullstack">Full Stack</button>
+                </div>
+
+                <div class="project-grid">
+                    <article class="project-card reveal" data-category="fullstack web">
+                        <div class="project-visual gradient-one"></div>
+                        <div class="project-body">
+                            <h3>E-Commerce Platform</h3>
+                            <p>Full stack shopping experience with product browsing, payment flow, and admin tools.</p>
+                            <div class="tag-row">
+                                <span>Vue.js</span>
+                                <span>Node.js</span>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="frontend web">
+                        <div class="project-visual gradient-two"></div>
+                        <div class="project-body">
+                            <h3>Task Management App</h3>
+                            <p>Productive dashboard interface designed for clear workflows and live project visibility.</p>
+                            <div class="tag-row">
+                                <span>JavaScript</span>
+                                <span>HTML</span>
+                                <span>CSS</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="frontend">
+                        <div class="project-visual gradient-three"></div>
+                        <div class="project-body">
+                            <h3>Portfolio Experience</h3>
+                            <p>Personal brand site focused on storytelling, interaction, and responsive presentation.</p>
+                            <div class="tag-row">
+                                <span>HTML</span>
+                                <span>CSS</span>
+                                <span>Animation</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card reveal" data-category="fullstack web">
+                        <div class="project-visual gradient-four"></div>
+                        <div class="project-body">
+                            <h3>Client Booking System</h3>
+                            <p>Scheduling workflow with form validation, calendar logic, and streamlined communication.</p>
+                            <div class="tag-row">
+                                <span>Node.js</span>
+                                <span>SQL</span>
+                                <span>UI Design</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section> -->
+
+            <section class="section section-dark contact-section" id="contact">
+                <div class="section-heading reveal">
+                    <h2>Get in Touch</h2>
+                </div>
+
+                <div class="content-grid two-column">
+                    <form class="contact-form reveal">
+                        <label>
+                            <span>Your Name</span>
+                            <input type="text" name="name" placeholder="Your Name">
+                        </label>
+                        <label>
+                            <span>Your Email</span>
+                            <input type="email" name="email" placeholder="Your Email">
+                        </label>
+                        <label>
+                            <span>Your Message</span>
+                            <textarea name="message" rows="6" placeholder="Sen"></textarea>
+                        </label>
+                        <button class="button button-primary" type="submit">Send Message</button>
+                    </form>
+
+                    <div class="contact-details reveal">
+                        <article class="contact-card">
+                            <div class="contact-icon">E</div>
+                            <div>
+                                <h3>Email</h3>
+                                <p>tamrynripepi00@gmail.com</p>
+                            </div>
+                        </article>
+                        <article class="contact-card">
+                            <div class="contact-icon">L</div>
+                            <div>
+                                <h3>LinkedIn</h3>                               
+                                <p><a href="https://www.linkedin.com/in/tamryn-ripepi-1352a5212/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tamryn-ripepi-1352a5212</a></p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
