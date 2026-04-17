@@ -17,7 +17,6 @@
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#skills">Skills</a>
-                    <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
             </nav>
@@ -131,16 +130,16 @@
                 <div class="section-heading reveal">
                     <p class="section-label">Featured Projects</p>
                     <h2>Selected work</h2>
-                </div>
+                </div> -->
 
-                <div class="filter-bar reveal" data-filter-group="projects">
+                <!-- <div class="filter-bar reveal" data-filter-group="projects">
                     <button class="filter-button is-active" type="button" data-filter="all">All</button>
                     <button class="filter-button" type="button" data-filter="web">Web Apps</button>
                     <button class="filter-button" type="button" data-filter="frontend">Frontend</button>
                     <button class="filter-button" type="button" data-filter="fullstack">Full Stack</button>
-                </div>
+                </div> -->
 
-                <div class="project-grid">
+                <!-- <div class="project-grid">
                     <article class="project-card reveal" data-category="fullstack web">
                         <div class="project-visual gradient-one"></div>
                         <div class="project-body">
@@ -152,9 +151,9 @@
                                 <span>SQL</span>
                             </div>
                         </div>
-                    </article>
+                    </article> -->
 
-                    <article class="project-card reveal" data-category="frontend web">
+                    <!-- <article class="project-card reveal" data-category="frontend web">
                         <div class="project-visual gradient-two"></div>
                         <div class="project-body">
                             <h3>Task Management App</h3>
@@ -191,9 +190,9 @@
                                 <span>UI Design</span>
                             </div>
                         </div>
-                    </article>
+                    </article> -->
                 </div>
-            </section> -->
+            </section>
 
             <section class="section section-dark contact-section" id="contact">
                 <div class="section-heading reveal">
@@ -201,20 +200,20 @@
                 </div>
 
                 <div class="content-grid two-column">
-                    <form class="contact-form reveal">
-                        <label>
+                    <form action="https://formspree.io/f/xnjldjzn" method="post" class="contact-form reveal">
+                        <label for="name">
                             <span>Your Name</span>
-                            <input type="text" name="name" placeholder="Your Name">
+                            <input id="name" name="name" type="text" placeholder="Your Name">
                         </label>
-                        <label>
+                        <label for="email">
                             <span>Your Email</span>
-                            <input type="email" name="email" placeholder="Your Email">
+                            <input id="email" name="email" type="email" placeholder="Your Email">
                         </label>
-                        <label>
+                        <label for="message">
                             <span>Your Message</span>
-                            <textarea name="message" rows="6" placeholder="Sen"></textarea>
+                            <textarea id="message" name="message" rows="6" placeholder="Write a message"></textarea>
                         </label>
-                        <button class="button button-primary" type="submit">Send Message</button>
+                        <button type="submit" class="button button-primary">Send Message</button>
                     </form>
 
                     <div class="contact-details reveal">

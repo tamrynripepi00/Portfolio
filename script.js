@@ -57,31 +57,41 @@ document.querySelector('a[href*="My CV.pdf"]').addEventListener('click', functio
   document.body.removeChild(a);
 });
 
-// Contact form - opens email client (frontend only)
+// Formspree AJAX handler - submit without page reload, clear form + success
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   
   const formData = new FormData(this);
-  const name = formData.get('name');
-  const email = formData.get('email');
-  const message = formData.get('message');
+  const submitButton = this.querySelector('button[type="submit"]');
+  const originalText = submitButton.textContent;
+  const originalBg = submitButton.style.background;
   
-  const subject = `Portfolio Contact Form: ${name}`;
-  const body = `Email: ${email}%0D%0A%0D%0AMessage:%0D%0A${message.replace(/\n/g, '%0D%0A')}`;
+  submitButton.textContent = 'Sending...';
+  submitButton.disabled = true;
   
-  window.location.href = `mailto:tamrynripepi00@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-  
-  // Reset form
-  this.reset();
-  
-  // Success message
-  const button = this.querySelector('button[type="submit"]');
-  const originalText = button.textContent;
-  button.textContent = 'Message Sent!';
-  button.style.background = '#10b981';
-  setTimeout(() => {
-    button.textContent = originalText;
-    button.style.background = '';
-  }, 3000);
+  fetch('https://formspree.io/f/xnjldjzn', {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      this.reset(); // Clears input values (words disappear)
+      submitButton.textContent = 'Message Sent!';
+      submitButton.style.background = '#10b981';
+    } else {
+      submitButton.textContent = 'Error - Try Again';
+      submitButton.style.background = '#ef4444';
+    }
+  }).catch(() => {
+    submitButton.textContent = 'Error - Try Again';
+    submitButton.style.background = '#ef4444';
+  }).finally(() => {
+    setTimeout(() => {
+      submitButton.textContent = originalText;
+      submitButton.style.background = originalBg;
+      submitButton.disabled = false;
+    }, 3000);
+  });
 });
-
