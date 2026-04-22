@@ -1,7 +1,1 @@
-# Email Mailto Link TODO
-
-## Steps:
-- [x] Step 1: Update index.html email to mailto link
-- [x] Step 2: Test opens Gmail compose
-
-**Progress tracked here.**
+# Task: Replace E-Commerce with Login_Page in Featured Projects&#10;&#10;## Steps:&#10;- [x] 1. Read and analyze Portfolio/index.html (confirmed E-Commerce card)&#10;- [x] 2. Review login_page files (confirmed flip-card login/signup demo)&#10;- [x] 3. Get user plan approval (confirmed title update to Login/Signup)&#10;- [ ] 4. Edit Portfolio/index.html: Replace E-Commerce content with Login/Signup project details&#10;- [ ] 5. Verify changes and complete task

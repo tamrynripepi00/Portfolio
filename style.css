@@ -1,3 +1,4 @@
+/* Targets the color, spacing, and size settings used across the whole website */
 :root {
     --bg-dark: #111a2d;
     --bg-dark-soft: #1a2740;
@@ -20,14 +21,17 @@
     --max-width: 1180px;
 }
 
+/* Targets every element on the page */
 * {
     box-sizing: border-box;
 }
 
+/* Targets the whole page when you click About, Skills, or Contact links */
 html {
     scroll-behavior: smooth;
 }
 
+/* Targets the whole page background, text color, and font */
 body {
     margin: 0;
     font-family: "Plus Jakarta Sans", sans-serif;
@@ -35,21 +39,25 @@ body {
     color: var(--text-light);
 }
 
+/* Targets all links on the page */
 a {
     color: inherit;
     text-decoration: none;
 }
 
+/* Targets buttons, input boxes, and text areas */
 button,
 input,
 textarea {
     font: inherit;
 }
 
+/* Targets the main wrapper around your whole website */
 .page-shell {
     min-height: 100vh;
 }
 
+/* Targets the top hero section with your name, role, and button */
 .hero {
     position: relative;
     overflow: hidden;
@@ -60,6 +68,7 @@ textarea {
         linear-gradient(135deg, #10192c 0%, #1a263c 100%);
 }
 
+/* Targets the main content blocks so they sit above the background circles and grid */
 .topbar,
 .hero-content,
 .section,
@@ -71,6 +80,7 @@ textarea {
     z-index: 1;
 }
 
+/* Targets the top navigation bar */
 .topbar {
     max-width: var(--max-width);
     margin: 0 auto;
@@ -79,6 +89,7 @@ textarea {
     justify-content: space-between;
 }
 
+/* Targets the TR circle logo at the top left */
 .brand {
     display: inline-flex;
     align-items: center;
@@ -92,16 +103,19 @@ textarea {
     letter-spacing: 0.08em;
 }
 
+/* Targets the About, Skills, and Contact links at the top right */
 .nav-links {
     display: flex;
     gap: 24px;
     color: rgba(244, 247, 255, 0.78);
 }
 
+/* Targets the top menu links when you hover over them */
 .nav-links a:hover {
     color: var(--text-light);
 }
 
+/* Targets the middle content block that holds your name, role, text, and button */
 .hero-content {
     max-width: 860px;
     margin: 0 auto;
@@ -111,11 +125,13 @@ textarea {
     text-align: center;
 }
 
+/* Targets the hero content after it has finished revealing */
 .hero-content.reveal {
     opacity: 1;
     transform: none;
 }
 
+/* Targets small section label text like little headings above titles */
 .eyebrow,
 .section-label {
     margin: 0 0 12px;
@@ -126,6 +142,7 @@ textarea {
     color: #8eb8ff;
 }
 
+/* Targets the big Tamryn Ripepi heading in the middle */
 .hero h1 {
     margin: 0;
     font-size: clamp(3.8rem, 12vw, 7rem);
@@ -133,12 +150,13 @@ textarea {
     letter-spacing: -0.05em;
 }
 
-/* Targets .hero-name-line inside the main hero heading */
+/* Targets each name line in the big heading, like Tamryn and Ripepi */
 .hero-name-line {
     display: block;
     animation: heroNameBounce 3.6s ease-in-out infinite;
 }
 
+/* Targets the Ripepi line to make it blue */
 .hero-name-last {
     background: linear-gradient(90deg, #73abff 0%, #2d6ef0 100%);
     -webkit-background-clip: text;
@@ -147,7 +165,7 @@ textarea {
     animation-delay: 0.55s;
 }
 
-/* Used by .hero-name-line, with .hero-name-last delayed so surname follows the first name */
+/* Targets the bouncing movement for the big name text */
 @keyframes heroNameBounce {
     0%,
     100% {
@@ -167,7 +185,7 @@ textarea {
     }
 }
 
-/* Targets .hero-role for the "coming out of the wall" effect */
+/* Targets the Entry Level Software Developer text */
 .hero-role {
     margin: 24px 0 10px;
     display: inline-block;
@@ -177,7 +195,7 @@ textarea {
     animation: heroRoleWallPop 3.8s ease-in-out infinite;
 }
 
-/* Used by .hero-role */
+/* Targets the pop-out animation used on the role text */
 @keyframes heroRoleWallPop {
     0%,
     100% {
@@ -198,7 +216,7 @@ textarea {
     }
 }
 
-/* Targets .hero-copy under the hero role */
+/* Targets the short paragraph under your role */
 .hero-copy {
     max-width: 640px;
     margin: 0 auto;
@@ -208,7 +226,7 @@ textarea {
     animation: heroCopyGlow 4.6s ease-in-out infinite;
 }
 
-/* Used by .hero-copy */
+/* Targets the glow animation on the short paragraph under your role */
 @keyframes heroCopyGlow {
     0%,
     100% {
@@ -219,6 +237,7 @@ textarea {
     }
 }
 
+/* Targets the area holding the Download CV button */
 .hero-actions {
     display: flex;
     gap: 16px;
@@ -227,6 +246,7 @@ textarea {
     flex-wrap: wrap;
 }
 
+/* Targets buttons like Download CV and Send Message */
 .button {
     display: inline-flex;
     align-items: center;
@@ -238,20 +258,24 @@ textarea {
     transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
+/* Targets buttons when you move your mouse over them */
 .button:hover {
     transform: translateY(-2px);
 }
 
+/* Targets the blue main button like Download CV */
 .button-primary {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
     box-shadow: 0 18px 40px rgba(41, 103, 233, 0.28);
 }
 
+/* Targets the softer second button style if you use one later */
 .button-secondary {
     background: rgba(255, 255, 255, 0.06);
     border-color: var(--border);
 }
 
+/* Targets the background circles and grid behind the hero section */
 .hero-orbit,
 .hero-grid {
     position: absolute;
@@ -259,12 +283,14 @@ textarea {
     pointer-events: none;
 }
 
+/* Targets the glowing circle rings behind your name */
 .hero-orbit {
     border-radius: 50%;
     border: 1px solid rgba(122, 170, 255, 0.18);
     animation: orbitFloat 9s ease-in-out infinite;
 }
 
+/* Targets the bigger background circle behind your hero text */
 .hero-orbit-one {
     width: 680px;
     height: 680px;
@@ -273,6 +299,7 @@ textarea {
     transform: translate(-50%, -50%);
 }
 
+/* Targets the smaller background circle behind your hero text */
 .hero-orbit-two {
     width: 470px;
     height: 470px;
@@ -282,11 +309,13 @@ textarea {
     animation-delay: -3s;
 }
 
+/* Targets the slow movement of the background circles */
 @keyframes orbitFloat {
     0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
     50% { transform: translate(-50%, -50%) rotate(180deg); }
 }
 
+/* Targets the square grid pattern behind your hero section */
 .hero-grid {
     inset: 0;
     background-image:
@@ -296,20 +325,24 @@ textarea {
     mask-image: radial-gradient(circle at center, black 25%, transparent 78%);
 }
 
+/* Targets every main section like About, Skills, and Contact */
 .section {
     padding: 100px 24px;
 }
 
+/* Targets light sections like your About section */
 .section-light {
     background: var(--bg-light);
     color: var(--text-dark);
 }
 
+/* Targets the Skills section background */
 .section-soft {
     background: linear-gradient(180deg, #eef4ff 0%, #f7f9fe 100%);
     color: var(--text-dark);
 }
 
+/* Targets the dark Contact section background */
 .section-dark {
     background:
         radial-gradient(circle at top center, rgba(74, 140, 255, 0.22), transparent 35%),
@@ -317,6 +350,7 @@ textarea {
     color: var(--text-light);
 }
 
+/* Targets the main content width so sections stay centered */
 .content-grid,
 .section-heading,
 .skills-layout,
@@ -325,6 +359,7 @@ textarea {
     margin: 0 auto;
 }
 
+/* Targets sections that use two columns, like About and Contact */
 .two-column {
     display: grid;
     gap: 40px;
@@ -332,6 +367,7 @@ textarea {
     align-items: start;
 }
 
+/* Targets a feature list inside the right side of the About area */
 .about-right .feature-list {
     margin-top: 32px;
     display: grid;
@@ -339,12 +375,14 @@ textarea {
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Targets the area holding your profile picture */
 .profile-section {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Targets your profile picture */
 .profile-pic {
     width: 100%;
     max-width: 360px;
@@ -354,11 +392,13 @@ textarea {
     object-fit: cover;
 }
 
+/* Targets the heading area at the top of sections */
 .section-heading {
     text-align: center;
     margin-bottom: 38px;
 }
 
+/* Targets main section titles like Programming Skills or Get in Touch */
 .section-copy h2,
 .section-heading h2 {
     display: inline-block;
@@ -373,7 +413,7 @@ textarea {
     color: transparent;
 }
 
-
+/* Targets paragraph text under section titles */
 .section-copy p,
 .section-heading p {
     margin: 0;
@@ -382,18 +422,20 @@ textarea {
     color: var(--text-muted);
 }
 
+/* Targets text inside dark sections so it stays easier to read */
 .section-dark .section-heading p,
 .section-dark .contact-details p {
     color: rgba(244, 247, 255, 0.72);
 }
 
+/* Targets the layout for feature cards */
 .feature-list {
     display: grid;
     gap: 18px;
     grid-template-columns: repeat(3, 1fr);
 }
 
-
+/* Targets project cards and contact cards */
 .project-card,
 .contact-card {
     background: var(--surface-light);
@@ -401,11 +443,13 @@ textarea {
     box-shadow: var(--shadow);
 }
 
+/* Targets each feature card box */
 .feature-card {
     padding: 28px 24px;
     border-radius: var(--radius-md);
 }
 
+/* Targets the little icon or letter boxes in skills, features, and contact cards */
 .feature-icon,
 .skill-mark,
 .contact-icon {
@@ -421,6 +465,7 @@ textarea {
     font-size: 1.3rem;
 }
 
+/* Targets titles inside cards */
 .feature-card h3,
 .skill-card h4,
 .project-body h3,
@@ -429,6 +474,7 @@ textarea {
     font-size: 1.28rem;
 }
 
+/* Targets paragraph text inside cards */
 .feature-card p,
 .skill-card p,
 .project-body p {
@@ -437,6 +483,7 @@ textarea {
     line-height: 1.7;
 }
 
+/* Targets the row of filter buttons in the Projects section */
 .filter-bar {
     margin: 0 auto 34px;
     display: flex;
@@ -445,6 +492,7 @@ textarea {
     flex-wrap: wrap;
 }
 
+/* Targets each filter button in the Projects section */
 .filter-button {
     padding: 12px 18px;
     border: 0;
@@ -455,6 +503,7 @@ textarea {
     transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
+/* Targets filter buttons when active or hovered */
 .filter-button:hover,
 .filter-button.is-active {
     background: linear-gradient(135deg, var(--accent) 0%, var(--accent-strong) 100%);
@@ -462,21 +511,25 @@ textarea {
     transform: translateY(-1px);
 }
 
+/* Targets the grid that holds your skill cards */
 .skills-layout {
     display: grid;
     gap: 18px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+/* Targets each skills block, like Programming Skills or Tools */
 .skills-block {
     max-width: var(--max-width);
     margin: 0 auto;
 }
 
+/* Targets the second skills block to give space above it */
 .skills-block + .skills-block {
     margin-top: 36px;
 }
 
+/* Targets the Tools heading */
 .skills-subtitle {
     margin: 0 0 20px;
     text-align: center;
@@ -484,17 +537,20 @@ textarea {
     color: var(--text-dark);
 }
 
+/* Targets the Tools cards row so it is not too wide */
 .tools-layout {
     max-width: 780px;
     margin: 0 auto;
 }
 
+/* Targets each skill or tool card */
 .skill-card {
     border-radius: var(--radius-md);
     padding: 24px;
     text-align: center;
 }
 
+/* Targets the colored letter boxes for each skill */
 .html-mark { background: linear-gradient(135deg, #ff8a4c 0%, #ff5d1f 100%); }
 .css-mark { background: linear-gradient(135deg, #71a8ff 0%, #3f7cff 100%); }
 .js-mark { background: linear-gradient(135deg, #ffd94d 0%, #f0b100 100%); }
@@ -505,12 +561,14 @@ textarea {
 .vscode-mark { background: linear-gradient(135deg, #008fff 0%, #005ccc 100%); }
 .design-mark { background: linear-gradient(135deg, #f24e1e 0%, #ff7262 100%); }
 
+/* Targets the layout that holds all the project cards */
 .project-grid {
     display: grid;
     gap: 24px;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
 }
 
+/* Targets each single project card */
 .project-card {
     border-radius: var(--radius-lg);
     overflow: hidden;
@@ -519,26 +577,48 @@ textarea {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Targets each project card when you hover over it */
 .project-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 32px 80px rgba(19, 37, 71, 0.24);
 }
 
+/* Targets the top image or color area inside a project card */
 .project-visual {
     height: 220px;
     position: relative;
     overflow: hidden;
 }
 
+/* Targets the different background colors for project preview boxes */
 .gradient-one { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
 .gradient-two { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
 .gradient-three { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
 .gradient-four { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
 
+/* Targets the text area inside each project card */
 .project-body {
     padding: 28px;
 }
 
+.project-link-text {
+    display: inline-flex;
+    margin-top: 18px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.project-link-text:hover {
+    text-decoration: underline;
+}
+
+.project-link-text:focus-visible {
+    outline: 3px solid rgba(74, 140, 255, 0.45);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+/* Targets the row of small tags inside a project card */
 .tag-row {
     display: flex;
     gap: 8px;
@@ -546,6 +626,7 @@ textarea {
     margin-top: 12px;
 }
 
+/* Targets each small tag inside a project card */
 .tag-row span {
     padding: 4px 12px;
     background: var(--accent-soft);
@@ -555,71 +636,72 @@ textarea {
     font-weight: 600;
 }
 
+/* Targets items that should be hidden */
 .is-hidden {
     opacity: 0 !important;
     transform: translateY(20px) !important;
     pointer-events: none !important;
 }
 
-/* Targets any element with the .reveal class */
+/* Targets anything that should fade or slide in when it appears */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
-/* Targets elements with .reveal-right */
+/* Targets reveal items that should slide in from the right */
 .reveal-right {
     transform: translateX(70px);
 }
 
-/* Targets elements with .reveal-left */
+/* Targets reveal items that should slide in from the left */
 .reveal-left {
     transform: translateX(-70px);
 }
 
-/* Targets the Get in Touch heading with .contact-heading-reveal */
+/* Targets the Get in Touch heading animation */
 .contact-heading-reveal {
     transform: translateX(110px);
 }
 
-/* Applies when any .reveal element also gets .is-visible from script.js */
+/* Targets reveal items after they become visible on screen */
 .reveal.is-visible {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-/* Targets each direct child inside .hero-reveal */
+/* Targets each line inside your hero content before it appears */
 .hero-reveal > * {
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* Applies when .hero-reveal gets .is-visible */
+/* Targets each line inside the hero after it becomes visible */
 .hero-reveal.is-visible > * {
     opacity: 1;
     transform: translateX(0);
 }
 
-/* Delays for each direct child inside .hero-reveal */
+/* Targets each hero item with a different delay so they appear one after the other */
 .hero-reveal > *:nth-child(1) { transition-delay: 0.25s; }
 .hero-reveal > *:nth-child(2) { transition-delay: 0.5s; }
 .hero-reveal > *:nth-child(3) { transition-delay: 0.75s; }
 .hero-reveal > *:nth-child(4) { transition-delay: 1s; }
 
-/* Targets .reveal items only inside the #skills section before they appear */
+/* Targets reveal items inside the Skills section before they appear */
 #skills .reveal {
     transform: translateY(54px) scale(0.92);
 }
 
-/* Targets .reveal.is-visible items only inside the #skills section */
+/* Targets reveal items inside the Skills section after they appear */
 #skills .reveal.is-visible {
     transform: translate(0, 0) scale(1);
     animation: skillsBounceIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-/* Used by the #skills .reveal.is-visible animation */
+/* Targets the bounce animation used on the Skills section */
 @keyframes skillsBounceIn {
     0% {
         opacity: 0;
@@ -638,23 +720,26 @@ textarea {
     }
 }
 
-
+/* Targets the Contact section spacing at the bottom */
 .contact-section {
     padding-bottom: 120px;
 }
 
+/* Targets the whole contact form */
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Targets each label block in the contact form */
 .contact-form label {
     display: flex;
     flex-direction: column;
     gap: 6px;
 }
 
+/* Targets the name, email, and message boxes in the contact form */
 .contact-form input,
 .contact-form textarea {
     padding: 16px 20px;
@@ -667,23 +752,19 @@ textarea {
     caret-color: #ffffff;
 }
 
+/* Targets the placeholder text inside the contact form boxes */
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
     color: var(--accent);
     opacity: 1;
 }
-
-
-
+/* Targets the small text above each contact form box */
 .contact-form label span {
     color: #8eb8ff;
     font-weight: 600;
     font-size: 0.95rem;
 }
-
-
-
-
+/* Targets the form boxes when you click into them */
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
@@ -691,7 +772,7 @@ textarea {
     box-shadow: 0 0 0 3px rgba(74, 140, 255, 0.12);
 }
 
-/* Targets autofilled contact form inputs so they stay blue instead of turning white */
+/* Targets autofilled form boxes so they keep your blue style */
 .contact-form input:-webkit-autofill,
 .contact-form input:-webkit-autofill:hover,
 .contact-form input:-webkit-autofill:focus,
@@ -706,12 +787,14 @@ textarea {
     transition: background-color 9999s ease-in-out 0s;
 }
 
+/* Targets the right side contact details area */
 .contact-details {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
+/* Targets each contact card like Email and LinkedIn */
 .contact-card {
     display: flex;
     gap: 16px;
@@ -722,86 +805,132 @@ textarea {
     transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Targets contact cards when you hover over them */
 .contact-card:hover {
     background: rgba(74, 140, 255, 0.12);
     transform: translateX(4px);
     box-shadow: var(--shadow);
 }
 
+/* Targets the letter icon inside each contact card */
 .contact-icon {
     font-size: 1.4rem;
 }
 
+/* Targets titles like Email and LinkedIn inside the contact cards */
 .contact-card h3 {
     margin: 0 0 4px;
     color: #73abff;
 }
 
+/* Targets the smaller text inside the contact cards */
 .contact-card p {
     margin: 0;
     color: var(--text-muted);
 }
 
+/* Targets links inside the contact cards */
 .contact-card a {
     color: var(--accent);
 }
 
+/* Targets contact links when you hover over them */
 .contact-card a:hover {
     text-decoration: underline;
 }
 
-/* Responsive */
+/* Targets the container holding the Gmail and Outlook email buttons */
+.email-options {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+/* Targets each Gmail and Outlook button inside the email options row */
+.email-options a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(74, 140, 255, 0.12);
+    color: #8eb8ff;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Targets the Gmail and Outlook buttons when you hover over them */
+.email-options a:hover {
+    background: rgba(74, 140, 255, 0.2);
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+/* Targets tablet and medium screen sizes */
 @media (max-width: 768px) {
+    /* Targets About and Contact so they stack into one column */
     .two-column {
         grid-template-columns: 1fr;
         gap: 32px;
     }
     
+    /* Targets feature cards and skill cards on tablet screens */
     .feature-list,
     .skills-layout {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
     
+    /* Targets project cards so they stack in one column */
     .project-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
+    /* Targets the top hero section spacing on tablet screens */
     .hero {
         padding: 20px 16px 60px;
         min-height: 100vh;
     }
     
+    /* Targets the spacing between About, Skills, and Contact links */
     .nav-links {
         gap: 16px;
     }
     
+    /* Targets the hero button area on smaller screens */
     .hero-actions {
         flex-direction: column;
         align-items: center;
     }
     
+    /* Targets buttons on smaller screens */
     .button {
         width: 100%;
         max-width: 280px;
     }
     
+    /* Targets the project filter row spacing */
     .filter-bar {
         gap: 8px;
     }
     
+    /* Targets the project filter buttons on smaller screens */
     .filter-button {
         padding: 10px 16px;
         font-size: 0.9rem;
     }
 }
 
+/* Targets phone screen sizes */
 @media (max-width: 480px) {
+    /* Targets the skill cards on phones */
     .skills-layout {
         grid-template-columns: 1fr;
     }
     
+    /* Targets the feature cards on phones */
     .feature-list {
         grid-template-columns: 1fr;
     }
