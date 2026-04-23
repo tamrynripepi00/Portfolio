@@ -47,6 +47,27 @@ document.querySelector('a[href*="My CV.pdf"]').addEventListener('click', functio
   document.body.removeChild(a);
 });
 
+// Tries to open the Outlook app first, then falls back to Outlook web.
+const outlookLink = document.querySelector('#outlook-link');
+
+if (outlookLink) {
+  outlookLink.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const appLink = this.dataset.appLink;
+    const fallbackLink = this.href;
+    const startTime = Date.now();
+
+    window.location.href = appLink;
+
+    setTimeout(() => {
+      if (Date.now() - startTime < 1800) {
+        window.open(fallbackLink, '_blank', 'noopener,noreferrer');
+      }
+    }, 900);
+  });
+}
+
 // Sends the contact form without reloading the page.
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
