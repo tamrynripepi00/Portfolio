@@ -523,7 +523,7 @@ textarea {
 .skills-layout {
     display: grid;
     gap: 18px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 /* Targets each skills block, like Programming Skills or Tools */
@@ -558,13 +558,18 @@ textarea {
     text-align: center;
 }
 
-/* Targets the colored letter boxes for each skill */
+/* Targets the colored letter boxes for the skills */
 .html-mark { background: linear-gradient(135deg, #ff8a4c 0%, #ff5d1f 100%); }
 .css-mark { background: linear-gradient(135deg, #71a8ff 0%, #3f7cff 100%); }
 .js-mark { background: linear-gradient(135deg, #ffd94d 0%, #f0b100 100%); }
 .node-mark { background: linear-gradient(135deg, #48cf78 0%, #1f9c51 100%); }
 .sql-mark { background: linear-gradient(135deg, #5b86ff 0%, #2857e7 100%); }
 .api-mark { background: linear-gradient(135deg, #9d7bff 0%, #6f4bef 100%); }
+.nodejs-mark { background: linear-gradient(135deg, #66bf7e 0%, #2f8f57 100%); }
+.php-mark { background: linear-gradient(135deg, #c86c72 0%, #a24554 100%); }
+.apex-mark { background: linear-gradient(135deg, #8d73e6 0%, #6748c8 100%); }
+.python-mark { background: linear-gradient(135deg, #6d95d8 0%, #426fbe 100%); }
+.bootstrap-mark { background: linear-gradient(135deg, #f0b36e 0%, #d98b45 100%); }
 .git-mark { background: linear-gradient(135deg, #f1502d 0%, #c13515 100%); }
 .vscode-mark { background: linear-gradient(135deg, #008fff 0%, #005ccc 100%); }
 .design-mark { background: linear-gradient(135deg, #f24e1e 0%, #ff7262 100%); }
