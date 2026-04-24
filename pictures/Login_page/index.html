@@ -7,22 +7,23 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="toast" id="signup-toast">Account created</div>
 
 <div class="card-container">
   <div class="card">
     <div class="front">
       <h2>Login</h2>
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
+      <input type="text" placeholder="Username" autocomplete="username">
+      <input type="password" placeholder="Password" autocomplete="current-password">
       <button>Log In</button>
       <p>Don't have an account? <span class="flip-btn">Sign Up</span></p>
     </div>
     <div class="back">
       <h2>Sign Up</h2>
-      <input type="text" placeholder="Username">
-      <input type="email" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <button>Sign Up</button>
+      <input type="email" id="signup-email" placeholder="Email" autocomplete="email">
+      <input type="text" id="signup-username" placeholder="Create Username" autocomplete="username">
+      <input type="password" id="signup-password" placeholder="Create Password" autocomplete="new-password">
+      <button id="signup-btn">Sign Up</button>
       <p>Already have an account? <span class="flip-btn">Log In</span></p>
     </div>
   </div>

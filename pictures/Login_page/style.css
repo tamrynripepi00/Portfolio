@@ -1,27 +1,58 @@
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #89f7fe, #66a6ff);
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  height: 100vh;
-  padding-top: 60px;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: 60px 16px 24px;
+  box-sizing: border-box;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-24px);
+  min-width: 220px;
+  max-width: calc(100vw - 32px);
+  padding: 14px 18px;
+  background: #ffffff;
+  color: #2c5fb8;
+  border: 2px solid #66a6ff;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(51, 115, 214, 0.18);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 .card-container {
   perspective: 1000px;
 }
-
+/* When clicking login/signup, the card falls away */
 .card-container.falling {
   animation: fall-away 0.7s ease-in forwards;
 }
-
+/* After clicking login/signup, then it reappears */
 .card-container.reappear {
   animation: reappear 0.4s ease-out forwards;
 }
 
 .card {
   width: 300px;
+  max-width: calc(100vw - 32px);
   position: relative;
 }
 
@@ -33,6 +64,7 @@ body {
   border-radius: 10px;
   background: #fff;
   transition: opacity 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 
 .back {
@@ -56,6 +88,8 @@ input {
   margin: 8px 0;
   border-radius: 5px;
   border: 1px solid #ccc;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 button {
@@ -66,6 +100,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 .flip-btn {
@@ -95,5 +130,11 @@ button {
   100% {
     transform: translateY(0) rotateZ(0deg);
     opacity: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 40px 12px 20px;
   }
 }
