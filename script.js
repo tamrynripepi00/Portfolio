@@ -1,5 +1,8 @@
-// Finds everything with the .reveal class.
-const revealItems = document.querySelectorAll(".reveal");
+// Finds the regular reveal items.
+const revealItems = document.querySelectorAll(".reveal:not(.reveal-early)");
+
+// Finds the Back to Top button wrapper so it can appear sooner.
+const earlyRevealItems = document.querySelectorAll(".reveal-early");
 
 // Watches reveal items when they scroll into view.
 const revealObserver = new IntersectionObserver(
@@ -25,6 +28,28 @@ const revealObserver = new IntersectionObserver(
 // Starts watching each reveal item.
 revealItems.forEach((item) => {
     revealObserver.observe(item);
+});
+
+// Shows the Back to Top button a bit earlier while scrolling.
+const earlyRevealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            } else {
+                entry.target.classList.remove("is-visible");
+            }
+        });
+    },
+    {
+        threshold: 0.05,
+        rootMargin: "0px 0px 140px 0px"
+    }
+);
+
+// Starts watching the Back to Top button wrapper.
+earlyRevealItems.forEach((item) => {
+    earlyRevealObserver.observe(item);
 });
 
 // Makes the CV link download the file.

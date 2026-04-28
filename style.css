@@ -549,6 +549,7 @@ textarea {
 .tools-layout {
     max-width: 780px;
     margin: 0 auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 /* Targets each skill or tool card */
@@ -881,6 +882,24 @@ textarea {
     text-decoration: none;
 }
 
+/* Targets the wrapper that centers the Back to Top button */
+.back-to-top-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+}
+
+/* Targets the Back to Top button in the contact section */
+.back-to-top-button {
+    border-color: rgba(142, 184, 255, 0.28);
+    color: #8eb8ff;
+}
+
+/* Targets the Back to Top button when you hover over it */
+.back-to-top-button:hover {
+    background: rgba(74, 140, 255, 0.16);
+}
+
 /* Targets tablet and medium screen sizes */
 @media (max-width: 768px) {
     /* Targets About and Contact so they stack into one column */
@@ -993,6 +1012,11 @@ textarea {
 
     .email-options a {
         width: 100%;
+    }
+
+    .back-to-top-button {
+        width: 100%;
+        max-width: 280px;
     }
 
     /* Targets the skill cards on phones */
