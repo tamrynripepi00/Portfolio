@@ -571,6 +571,8 @@ textarea {
 .apex-mark { background: linear-gradient(135deg, #8d73e6 0%, #6748c8 100%); }
 .python-mark { background: linear-gradient(135deg, #6d95d8 0%, #426fbe 100%); }
 .bootstrap-mark { background: linear-gradient(135deg, #f0b36e 0%, #d98b45 100%); }
+.react-mark { background: linear-gradient(135deg, #71ef3c 0%, #3bd233 100%); }
+.typescript-mark { background: linear-gradient(135deg, #a05a34 0%, #ef835f 100%); }
 .git-mark { background: linear-gradient(135deg, #f1502d 0%, #c13515 100%); }
 .vscode-mark { background: linear-gradient(135deg, #008fff 0%, #005ccc 100%); }
 .design-mark { background: linear-gradient(135deg, #f24e1e 0%, #ff7262 100%); }
