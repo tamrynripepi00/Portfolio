@@ -1055,10 +1055,49 @@ textarea {
         max-width: 280px;
     }
 
-    /* Targets the skill category boxes and inner cards on phones */
-    .skills-groups,
-    .skill-group-grid {
+    /* Keeps the category boxes stacked on phones */
+    .skills-groups {
         grid-template-columns: 1fr;
+    }
+
+    .skills-groups {
+        gap: 14px;
+    }
+
+    .skill-group {
+        padding: 18px 16px;
+    }
+
+    .skill-group h3 {
+        font-size: 1.2rem;
+    }
+
+    .skill-group-copy {
+        margin-bottom: 14px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    /* Keeps the skill cards inside each box in two columns so the section is shorter */
+    .skill-group-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .skill-card {
+        padding: 16px 10px;
+    }
+
+    .skill-mark {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+        font-size: 1.1rem;
+    }
+
+    .skill-card h4 {
+        margin-top: 10px;
+        font-size: 0.95rem;
     }
     
     /* Targets the feature cards on phones */
