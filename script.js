@@ -53,24 +53,28 @@ earlyRevealItems.forEach((item) => {
 });
 
 // Makes the CV link download the file.
-document.querySelector('a[href*="My CV.pdf"]').addEventListener('click', function(e) {
-  e.preventDefault();
+const cvLink = document.querySelector('a[download][href*="CV.pdf"]');
 
-  // Gets the PDF link.
-  const link = this.href;
+if (cvLink) {
+  cvLink.addEventListener('click', function(e) {
+    e.preventDefault();
 
-  // Sets the file name.
-  const filename = 'Tamryn-Ripepi-CV.pdf';
+    // Gets the PDF link.
+    const link = this.href;
 
-  // Makes a hidden link and clicks it.
-  const a = document.createElement('a');
-  a.href = link;
-  a.download = filename;
-  a.style.display = 'none';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-});
+    // Sets the file name.
+    const filename = 'Tamryn-Ripepi-CV.pdf';
+
+    // Makes a hidden link and clicks it.
+    const a = document.createElement('a');
+    a.href = link;
+    a.download = filename;
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  });
+}
 
 // Tries to open the Outlook app first, then falls back to Outlook web.
 const outlookLink = document.querySelector('#outlook-link');
@@ -94,51 +98,51 @@ if (outlookLink) {
 }
 
 // Sends the contact form without reloading the page.
-document.querySelector('.contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  
-  // Gets the form data.
-  const formData = new FormData(this);
+const contactForm = document.querySelector('.contact-form');
 
-  // Finds the submit button.
-  const submitButton = this.querySelector('button[type="submit"]');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  // Saves the button text and color.
-  const originalText = submitButton.textContent;
-  const originalBg = submitButton.style.background;
-  
-  // Shows that the form is sending.
-  submitButton.textContent = 'Sending...';
-  submitButton.disabled = true;
-  
-  // Sends the form to Formspree.
-  fetch('https://formspree.io/f/xnjldjzn', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': 'application/json'
-    }
-  }).then(response => {
-    // If it works, clear the form and show success.
-    if (response.ok) {
-      this.reset(); // Clears input values (words disappear)
-      submitButton.textContent = 'Message Sent!';
-      submitButton.style.background = '#10b981';
-    } else {
-      // If it fails, show an error.
+    // Gets the form data.
+    const formData = new FormData(this);
+
+    // Finds the submit button.
+    const submitButton = this.querySelector('button[type="submit"]');
+    const originalText = submitButton.textContent;
+    const originalColor = submitButton.style.color;
+    const originalBackground = submitButton.style.background;
+
+    // Shows that the form is sending.
+    submitButton.textContent = 'Sending...';
+    submitButton.disabled = true;
+
+    // Sends the form to Formspree.
+    fetch('https://formspree.io/f/xnjldjzn', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        // Clear the fields so the details disappear after sending.
+        this.reset();
+        submitButton.textContent = 'Message Sent';
+        submitButton.style.background = '#16a34a';
+        submitButton.style.color = '#ffffff';
+      } else {
+        submitButton.textContent = 'Error - Try Again';
+      }
+    }).catch(() => {
       submitButton.textContent = 'Error - Try Again';
-      submitButton.style.background = '#ef4444';
-    }
-  }).catch(() => {
-    // If something goes wrong, show an error.
-    submitButton.textContent = 'Error - Try Again';
-    submitButton.style.background = '#ef4444';
-  }).finally(() => {
-    // Changes the button back after 3 seconds.
-    setTimeout(() => {
-      submitButton.textContent = originalText;
-      submitButton.style.background = originalBg;
-      submitButton.disabled = false;
-    }, 3000);
+    }).finally(() => {
+      setTimeout(() => {
+        submitButton.textContent = originalText;
+        submitButton.style.color = originalColor;
+        submitButton.style.background = originalBackground;
+        submitButton.disabled = false;
+      }, 2500);
+    });
   });
-});
+}

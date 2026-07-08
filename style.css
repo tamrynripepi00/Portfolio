@@ -532,31 +532,60 @@ textarea {
     margin: 0 auto;
 }
 
-/* Targets the second skills block to give space above it */
-.skills-block + .skills-block {
-    margin-top: 36px;
+/* Targets the full skills area so the categories can sit in clean boxes */
+.skills-groups {
+    display: grid;
+    gap: 22px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-/* Targets the Tools heading */
-.skills-subtitle {
-    margin: 0 0 20px;
-    text-align: center;
-    font-size: 1.5rem;
+/* Targets each category box, like Frontend, Backend, or Database */
+.skill-group {
+    padding: 26px;
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid rgba(74, 140, 255, 0.18);
+    box-shadow: 0 18px 50px rgba(72, 98, 154, 0.08);
+}
+
+/* Targets the title at the top of each skills box */
+.skill-group h3 {
+    margin: 0;
+    font-size: 1.45rem;
     color: var(--text-dark);
 }
 
-/* Targets the Tools cards row so it is not too wide */
-.tools-layout {
-    max-width: 780px;
-    margin: 0 auto;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+/* Targets the short line under each skills box title */
+.skill-group-copy {
+    margin: 10px 0 18px;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #5f6f92;
+}
+
+/* Targets the grid of skill cards inside each category box */
+.skill-group-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* Targets each skill or tool card */
 .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border-radius: var(--radius-md);
-    padding: 24px;
+    padding: 22px 14px;
     text-align: center;
+    background: rgba(74, 140, 255, 0.07);
+    border: 1px solid rgba(74, 140, 255, 0.08);
+}
+
+/* Targets the title under each skill icon */
+.skill-card h4 {
+    margin: 14px 0 0;
+    font-size: 1.1rem;
 }
 
 /* Targets the colored letter boxes for the skills */
@@ -910,11 +939,16 @@ textarea {
         gap: 32px;
     }
     
-    /* Targets feature cards and skill cards on tablet screens */
+    /* Targets feature cards and the skill category boxes on tablet screens */
     .feature-list,
-    .skills-layout {
+    .skills-groups {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
+    }
+
+    /* Lets the inner skill cards use the tablet width better */
+    .skill-group-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     
     /* Targets project cards so they stack in one column */
@@ -1021,8 +1055,9 @@ textarea {
         max-width: 280px;
     }
 
-    /* Targets the skill cards on phones */
-    .skills-layout {
+    /* Targets the skill category boxes and inner cards on phones */
+    .skills-groups,
+    .skill-group-grid {
         grid-template-columns: 1fr;
     }
     
