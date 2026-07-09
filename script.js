@@ -4,6 +4,9 @@ const revealItems = document.querySelectorAll(".reveal:not(.reveal-early)");
 // Finds the Back to Top button wrapper so it can appear sooner.
 const earlyRevealItems = document.querySelectorAll(".reveal-early");
 
+// Finds the three skill category boxes so each one can animate on mobile.
+const skillGroupItems = document.querySelectorAll("#skills .skill-group");
+
 // Watches reveal items when they scroll into view.
 const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -50,6 +53,27 @@ const earlyRevealObserver = new IntersectionObserver(
 // Starts watching the Back to Top button wrapper.
 earlyRevealItems.forEach((item) => {
     earlyRevealObserver.observe(item);
+});
+
+// Watches each skill category box so Frontend, Backend, and Database reveal one by one on phones.
+const skillGroupObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+            } else {
+                entry.target.classList.remove("is-visible");
+            }
+        });
+    },
+    {
+        threshold: 0.2,
+        rootMargin: "0px 0px -30px 0px"
+    }
+);
+
+skillGroupItems.forEach((item) => {
+    skillGroupObserver.observe(item);
 });
 
 // Makes the CV link download the file.

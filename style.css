@@ -688,42 +688,42 @@ textarea {
     pointer-events: none !important;
 }
 
-/* Targets anything that should fade or slide in when it appears */
+/* Animation movement starts here: the item is hidden and shifted down first */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
-/* Targets reveal items that should slide in from the right */
+/* Animation movement for items that slide in from the right */
 .reveal-right {
     transform: translateX(70px);
 }
 
-/* Targets reveal items that should slide in from the left */
+/* Animation movement for items that slide in from the left */
 .reveal-left {
     transform: translateX(-70px);
 }
 
-/* Targets the Get in Touch heading animation */
+/* Animation movement for the Contact heading */
 .contact-heading-reveal {
     transform: translateX(110px);
 }
 
-/* Targets reveal items after they become visible on screen */
+/* Animation end state: item moves back into place when visible */
 .reveal.is-visible {
     opacity: 1;
     transform: translate(0, 0);
 }
 
-/* Targets each line inside your hero content before it appears */
+/* Hero animation movement before it appears */
 .hero-reveal > * {
     opacity: 0;
     transform: translateX(-100px);
     transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* Targets each line inside the hero after it becomes visible */
+/* Hero animation end state after it becomes visible */
 .hero-reveal.is-visible > * {
     opacity: 1;
     transform: translateX(0);
@@ -735,18 +735,18 @@ textarea {
 .hero-reveal > *:nth-child(3) { transition-delay: 0.75s; }
 .hero-reveal > *:nth-child(4) { transition-delay: 1s; }
 
-/* Targets reveal items inside the Skills section before they appear */
+/* Skills animation movement before the boxes appear */
 #skills .reveal {
     transform: translateY(54px) scale(0.92);
 }
 
-/* Targets reveal items inside the Skills section after they appear */
+/* Skills animation end state after the boxes appear */
 #skills .reveal.is-visible {
     transform: translate(0, 0) scale(1);
     animation: skillsBounceIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
-/* Targets the bounce animation used on the Skills section */
+/* Bounce movement used by the Skills animation */
 @keyframes skillsBounceIn {
     0% {
         opacity: 0;
@@ -1066,6 +1066,18 @@ textarea {
 
     .skill-group {
         padding: 18px 16px;
+    }
+
+    .skill-group {
+        opacity: 0;
+        transform: translateY(54px) scale(0.92);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .skill-group.is-visible {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+        animation: skillsBounceIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
     }
 
     .skill-group h3 {
