@@ -15,7 +15,16 @@ if (typingText) {
   let roleIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
-  let typingDelay = 120;
+  let typingDelay = 160;
+  let typingTimer = null;
+  const roleHoldDelay = 3000;
+
+  const resetTyping = () => {
+    roleIndex = 0;
+    charIndex = typingRoles[0].length;
+    isDeleting = true;
+    typingText.textContent = typingRoles[0];
+  };
 
   const typeRole = () => {
     const currentRole = typingRoles[roleIndex];
@@ -24,20 +33,29 @@ if (typingText) {
     typingText.textContent = currentRole.slice(0, charIndex);
 
     if (!isDeleting && charIndex === currentRole.length) {
-      typingDelay = 1200;
+      typingDelay = roleHoldDelay;
       isDeleting = true;
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false;
       roleIndex = (roleIndex + 1) % typingRoles.length;
-      typingDelay = 500;
+      typingDelay = 900;
     } else {
-      typingDelay = isDeleting ? 70 : 120;
+      typingDelay = isDeleting ? 100 : 160;
     }
 
-    setTimeout(typeRole, typingDelay);
+    typingTimer = setTimeout(typeRole, typingDelay);
   };
 
-  typeRole();
+  resetTyping();
+  typingTimer = setTimeout(typeRole, roleHoldDelay);
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") {
+      clearTimeout(typingTimer);
+      resetTyping();
+      typingTimer = setTimeout(typeRole, roleHoldDelay);
+    }
+  });
 }
 
 // Watches reveal items when they scroll into view.
