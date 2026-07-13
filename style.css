@@ -192,34 +192,28 @@ textarea {
     }
 }
 
-/* Targets the Entry Level Software Developer text */
+/* Targets the animated role text in the hero */
 .hero-role {
     margin: 24px 0 10px;
     display: inline-block;
     font-size: clamp(1.25rem, 3vw, 1.8rem);
     color: rgba(244, 247, 255, 0.82);
     text-shadow: 0 0 0 rgba(142, 184, 255, 0);
-    animation: heroRoleWallPop 3.8s ease-in-out infinite;
+    min-height: 1.4em;
+    letter-spacing: 0.02em;
 }
 
-/* Targets the pop-out animation used on the role text */
-@keyframes heroRoleWallPop {
-    0%,
-    100% {
-        transform: perspective(900px) translateZ(0) scale(1);
-        text-shadow: 0 0 0 rgba(142, 184, 255, 0);
-    }
-    22% {
-        transform: perspective(900px) translateZ(110px) scale(1.08);
-        text-shadow: 0 12px 28px rgba(142, 184, 255, 0.3);
-    }
-    40% {
-        transform: perspective(900px) translateZ(55px) scale(1.04);
-        text-shadow: 0 8px 18px rgba(142, 184, 255, 0.2);
-    }
-    58% {
-        transform: perspective(900px) translateZ(0) scale(1);
-        text-shadow: 0 0 0 rgba(142, 184, 255, 0);
+.typing-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: rgba(142, 184, 255, 0.95);
+    animation: typingBlink 0.8s steps(1) infinite;
+}
+
+/* Keeps the cursor blinking cleanly. */
+@keyframes typingBlink {
+    50% {
+        opacity: 0;
     }
 }
 

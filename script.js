@@ -7,6 +7,39 @@ const earlyRevealItems = document.querySelectorAll(".reveal-early");
 // Finds the three skill category boxes so each one can animate on mobile.
 const skillGroupItems = document.querySelectorAll("#skills .skill-group");
 
+// Types the hero role text in a looping animation.
+const typingText = document.querySelector("#typing-text");
+const typingRoles = ["Software Developer", "Web Developer"];
+
+if (typingText) {
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typingDelay = 120;
+
+  const typeRole = () => {
+    const currentRole = typingRoles[roleIndex];
+
+    charIndex = isDeleting ? charIndex - 1 : charIndex + 1;
+    typingText.textContent = currentRole.slice(0, charIndex);
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      typingDelay = 1200;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % typingRoles.length;
+      typingDelay = 500;
+    } else {
+      typingDelay = isDeleting ? 70 : 120;
+    }
+
+    setTimeout(typeRole, typingDelay);
+  };
+
+  typeRole();
+}
+
 // Watches reveal items when they scroll into view.
 const revealObserver = new IntersectionObserver(
     (entries) => {
