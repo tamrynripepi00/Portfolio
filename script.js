@@ -221,3 +221,20 @@ if (contactForm) {
     });
   });
 }
+
+// Slides each story paragraph in from the side, and again when you scroll back up.
+const storyParas = document.querySelectorAll(".story-para");
+
+const storyObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            entry.target.classList.toggle("is-visible", entry.isIntersecting);
+        });
+    },
+    {
+        threshold: 0.2,
+        rootMargin: "0px 0px -40px 0px"
+    }
+);
+
+storyParas.forEach((para) => storyObserver.observe(para));
