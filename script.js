@@ -225,6 +225,61 @@ if (contactForm) {
 // Slides each story paragraph in from the side, and again when you scroll back up.
 const storyParas = document.querySelectorAll(".story-para");
 
+// On phones, fade the intro photo and name as soon as the story panel starts to show.
+const aboutIntroTitle = document.querySelector(".about-intro-title");
+const aboutStory = document.querySelector(".about-story");
+const aboutIntro = document.querySelector(".about-intro");
+const aboutIntroPhoto = document.querySelector(".about-intro .profile-section");
+const phoneQuery = window.matchMedia("(max-width: 480px)");
+
+if (aboutIntro && aboutIntroTitle && aboutIntroPhoto && aboutStory) {
+    const introRevealItems = [aboutIntroPhoto, aboutIntroTitle];
+
+    const updateIntroTitle = () => {
+        const wasStoryApproaching = aboutIntro.classList.contains("story-approaching");
+
+        if (!phoneQuery.matches) {
+            aboutIntro.classList.remove("story-approaching");
+            if (wasStoryApproaching) {
+                introRevealItems.forEach((item) => revealObserver.observe(item));
+            }
+            return;
+        }
+
+        const storyTop = aboutStory.getBoundingClientRect().top;
+        const storyApproaching = storyTop < window.innerHeight - 120;
+        aboutIntro.classList.toggle("story-approaching", storyApproaching);
+
+        // Reset the phone reveal when the story appears, then observe again on the way back up.
+        if (storyApproaching && !wasStoryApproaching) {
+            introRevealItems.forEach((item) => {
+                revealObserver.unobserve(item);
+                item.classList.remove("is-visible");
+            });
+        } else if (!storyApproaching && wasStoryApproaching) {
+            introRevealItems.forEach((item) => {
+                const bounds = item.getBoundingClientRect();
+                const isOnScreen = bounds.bottom > 0 && bounds.top < window.innerHeight;
+
+                revealObserver.unobserve(item);
+                item.classList.remove("is-visible");
+
+                if (isOnScreen) {
+                    // Restart the side-slide from its hidden position before revealing it again.
+                    void item.offsetWidth;
+                    item.classList.add("is-visible");
+                }
+
+                revealObserver.observe(item);
+            });
+        }
+    };
+
+    updateIntroTitle();
+    window.addEventListener("scroll", updateIntroTitle, { passive: true });
+    window.addEventListener("resize", updateIntroTitle);
+}
+
 const storyObserver = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {

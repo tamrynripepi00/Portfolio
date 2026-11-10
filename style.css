@@ -1184,6 +1184,27 @@ textarea {
         border-radius: 36px;
     }
 
+    .about-intro .profile-section,
+    .about-intro-title {
+        transition: opacity 1.2s ease, transform 1.2s ease;
+    }
+
+    .about-intro .profile-section.reveal-left {
+        transform: translateX(-55px);
+    }
+
+    .about-intro .profile-section.reveal-left.is-visible {
+        transform: translateX(0);
+    }
+
+    .about-intro-title.reveal-right {
+        transform: translateX(55px);
+    }
+
+    .about-intro-title.reveal-right.is-visible {
+        transform: translateX(0);
+    }
+
     .about-intro-title {
         width: calc(100% + 64px);
         max-width: 100vw;
@@ -1195,6 +1216,11 @@ textarea {
         font-size: clamp(1.25rem, 6vw, 1.45rem);
         top: 20px;
     }
+
+    .about-intro.story-approaching .profile-section,
+    .about-intro.story-approaching .about-intro-title {
+    pointer-events: none;
+}
 
     .hero h1 {
         font-size: clamp(2.5rem, 13vw, 3.6rem);
