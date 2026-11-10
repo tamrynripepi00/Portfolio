@@ -247,7 +247,8 @@ if (aboutIntro && aboutIntroTitle && aboutIntroPhoto && aboutStory) {
         }
 
         const storyTop = aboutStory.getBoundingClientRect().top;
-        const storyApproaching = storyTop < window.innerHeight - 120;
+        const titleBottom = aboutIntroTitle.getBoundingClientRect().bottom;
+        const storyApproaching = storyTop <= titleBottom + 40;
         aboutIntro.classList.toggle("story-approaching", storyApproaching);
 
         // Reset the phone reveal when the story appears, then observe again on the way back up.
